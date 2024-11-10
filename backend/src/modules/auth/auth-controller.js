@@ -3,7 +3,6 @@ const { login, logout, getNewAccessAndCsrfToken, processAccountEmailVerify, proc
 const { setAccessTokenCookie, setCsrfTokenCookie, setAllCookies, clearAllCookies } = require("../../cookie");
 
 const handleLogin = asyncHandler(async (req, res) => {
-    console.log(1);
     const { username, password } = req.body;
     const { accessToken, refreshToken, csrfToken, accountBasic } = await login(username, password);
 

@@ -97,11 +97,13 @@ export const AcademicInformation = () => {
         <Box>
           <TextField
             {...register('roll')}
+            type='number'
             error={Boolean(errors.roll)}
             helperText={errors.roll?.message}
             label='Roll'
             size='small'
             slotProps={{ inputLabel: { shrink: true } }}
+
           />
         </Box>
         <Box>

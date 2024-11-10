@@ -38,12 +38,7 @@ const addNewStudent = async (payload) => {
             throw new ApiError(500, result.message);
         }
 
-        try {
-            await sendAccountVerificationEmail({ userId: result.userId, userEmail: payload.email });
-            return { message: ADD_STUDENT_AND_EMAIL_SEND_SUCCESS };
-        } catch (error) {
-            return { message: ADD_STUDENT_AND_BUT_EMAIL_SEND_FAIL }
-        }
+        return { message: ADD_STUDENT_AND_BUT_EMAIL_SEND_FAIL };
     } catch (error) {
         throw new ApiError(500, "Unable to add student");
     }
